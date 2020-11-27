@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+    <head>
+	<style>
+	  header {
+  background-color:#FFFFFF;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+   footer {
+  background-color: #003399;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+nav {
+  float: left;
+  width: 20%;
+  height: 200px; 
+  background: #ccc;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+@media (max-width: 600px) {
+  nav, article {
+    width: 80;
+    height: auto;
+  }
+}
+	
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+table#t01 {
+  width: 100%;    
+  background-color: #f1f1c1;
+}
+		@media screen and (max-width:600px) {
+			.column {
+				width: 100%;
+			}
+		}
+		.tiende {
+			width: 100%;
+			height: 100%;
+		}
+</style>	 	
+        <meta charset="utf-8"> 
+			<div class="tiende">
+		<header> <IMG  style="float:bottom; width: 100%;" HSPACE="0" VSPACE="0" BORDER="0"  src="anh122.jpg"  width="1490" height="200" >
+		</header>
+	</div>
+	<div class="container ">
+		<div class="row">
+			<div class="col-sm-12">
+<div id="menu">
+  <ul>
+    <li><a href="index.html">Trang chủ</a></li>
+    <li><a href="ĐiềuKhiển.html">Điều Khiển</a></li>
+    <li><a href="nhom thuc hien.html">Nhóm Thực Hiện</a></li>
+  </ul> 
+</div>	  
+<br >
+</br>	
+<link rel="stylesheet" href="menu.css" type="text/css">
+	  <script src="jquery-3.2.1.min.js"></script>  
+	</header> 
+    <script src="jquery-3.4.1.min.js"></script>
+    </head>
+    <body style="background-color:#FFFFFF;">
+	 <meta charset="utf-8">
+	 <h1 align="right"> 
+	 <nav>
+	 <center><canvas id="canvas" width="200" height="200"
+style="background-color:#333">
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+</center>
+</nav>
+ 
+	 <h1 style="text-align:left;"><font color="#E74C3C ">Giám Sát Trạng Thái Hoạt Động Của Các Thiết Bị</font></h1>
+	 <h1 ><font color="#196F3D  ">
+	 <script language ="JavaScript" type = "text/javascript">
+	 function makeArray(n){
+	 arglen = makeArray.arguments.length;
+	 for (var i=0 ; i<arglen;i++) {this[i+1] = makeArray.arguments[i]; }}
+	 var today = new Date();
+	 var months = new makeArray("1","2","3","4","5","6","7","8","9","10","11","12");
+	 var days = new makeArray("Chủ Nhật","Thứ Hai","Thứ Ba","Thứ Tư","Thứ Năm","Thứ Sáu","Thứ Bảy");
+	 var dates = today.getDate();
+	 var ngay = today.getDay() +1;
+	 var nam = (today.getYear() % 100) +2000;
+	 if (ngay==0) ngay+=7;
+	 document.write("Hôm nay,"+days[ngay]+ ",Ngày &nbsp;"+dates+"&nbsp;tháng&nbsp;"+months[today.getMonth() +1]+"&nbsp; năm,"+nam); //today.getYear()
+	 
+	 </script>
+	 
+	 </font>
+	 </h1>
+	 <table id="t01">
+	 
+	                                      <tr  >
+                                         <th  colspan="100">HỆ THỐNG</th>
+										 <th><label id="counter4">ĐANG TẮT</label></th>	 
+                                         </tr>
+										 
+										 <tr  >
+                                         <th  colspan="100">CHẾ ĐỘ AUTO</th>
+										 <th><label id="counter5">ĐANG TẮT</label></th>	 
+                                         </tr>
+										 
+										 <tr  >
+                                         <th  colspan="100">CHẾ ĐỘ MAN</th>
+										 <th><label id="counter6">ĐANG TẮT</label></th>	 
+                                         </tr>
+										 
+										 <tr  >
+                                         <th  colspan="100">BƠM CHÍNH  </th>
+										 <th><label id="counter1">ĐANG DỪNG</label></th>	  
+                                         </tr>
+										 
+										  <tr  >
+                                         <th  colspan="100">BƠM PHỤ </th>
+										 <th><label id="counter3">ĐANG DỪNG</label></th>	 
+                                         </tr>
+										 
+					
+									
+										  <tr  >
+                                         <th colspan="100">Áp Suất MAN</th>
+										 <th><label id="counter"̣>0</label></th>	  
+                                         </tr>
+										 
+										 <tr  >
+                                         <th colspan="100">Áp Suất AUTO</th>
+										 <th><label id="counter2"̣>0</label></th>	  
+                                         </tr>
+										 
+										 <tr>
+                                         <th colspan="100">Áp Suất Thực</th>
+										 <th><label id="counter9"̣>0</label></th>	  
+                                         </tr>
+										 
+										   <tr  >
+                                         <th colspan="100">Tần Số Động Cơ</th>
+										 <th><label id="counter7">0</label></th>	  
+                                         </tr>
+                                         
+	                                     </table>
+     
+								
+
+                                 
+     
+    </body>
+   
+
+	
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $.ajaxSetup({ cache: false });
+        setInterval(function() {
+            $.get("IOCounter1.htm", function(result){
+                $('#counter1').text(result.trim());
+            });
+        },200);
+        });
+    </script>
+	
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $.ajaxSetup({ cache: false });
+        setInterval(function() {
+            $.get("IOCounter3.htm", function(result){
+                $('#counter3').text(result.trim());
+            });
+        },200);
+        });
+    </script>
+
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $.ajaxSetup({ cache: false });
+        setInterval(function() {
+            $.get("IOCounter4.htm", function(result){
+                $('#counter4').text(result.trim());
+            });
+        },200);
+        });
+    </script>
+	
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $.ajaxSetup({ cache: false });
+        setInterval(function() {
+            $.get("IOCounter5.htm", function(result){
+                $('#counter5').text(result.trim());
+            });
+        },200);
+        });
+    </script>
+	
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $.ajaxSetup({ cache: false });
+        setInterval(function() {
+            $.get("IOCounter6.htm", function(result){
+                $('#counter6').text(result.trim());
+            });
+        },200);
+        });
+    </script>
+	
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $.ajaxSetup({ cache: false });
+        setInterval(function() {
+            $.get("IOCounter.htm", function(result){
+                $('#counter').text(result.trim());
+            });
+        },200);
+        });
+    </script>
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $.ajaxSetup({ cache: false });
+        setInterval(function() {
+            $.get("IOCounter2.htm", function(result){
+                $('#counter2').text(result.trim());
+            });
+        },200);
+        });
+    </script>
+
+	
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $.ajaxSetup({ cache: false });
+        setInterval(function() {
+            $.get("IOCounter9.htm", function(result){
+                $('#counter9').text(result.trim());
+            });
+        },200);
+        });
+    </script>
+	
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $.ajaxSetup({ cache: false });
+        setInterval(function() {
+            $.get("IOCounter7.htm", function(result){
+                $('#counter7').text(result.trim());
+            });
+        },200);
+        });
+    </script>
+
+	
+
+	
+
+
+
+     <footer>
+  <p>DESIGN BY: Anh Nguyen</p>
+  <p>SDT: 0377429354</p>
+   <p>WEBSITE: Anh Nguyen.Com.Vn</p>
+	</body>
+</html>

@@ -1,0 +1,301 @@
+<!-- AWP_In_Variable Name='"denbaostop"'-->
+<!-- AWP_In_Variable Name='"denbaostart"'-->
+<!-- AWP_In_Variable Name='"M_START"' -->
+<!-- AWP_In_Variable Name='"M_STOP"' -->
+<!-- AWP_In_Variable Name='"RESET BT"' -->
+<!-- AWP_In_Variable Name='"AP SUAT DAT"' -->
+<!-- AWP_In_Variable Name='"GIA TRI CAM BIEN"' -->
+<!-- AWP_In_Variable Name='"AUTO"' -->
+<!-- AWP_In_Variable Name='"MAN"' -->
+<!-- AWP_In_Variable Name='"DEN MAN"'-->
+<!-- AWP_In_Variable Name='"DEN AUTO"'-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="menu.css" type="text/css">
+	<script src="jquery-3.2.1.min.js"></script> 
+	<title>Điều Khiển</title>
+	<style>
+
+		h1{
+			font-size:25px;
+		}
+		h2{
+			font-size:40px;
+
+
+		}
+		p{
+			font-size:20px;
+		}
+
+		header {
+			text-align: center;
+		}
+		footer {
+			background-color: #003399;
+			padding: 10px;
+			text-align: center;
+			color: white;
+			nav ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			nav ul a {
+				color: darkgreen;
+				text-decoration: none;
+			}
+
+		}
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		table#t01 {
+			width: 80%;    
+			background-color: #f1f1c1;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+
+		}
+
+		.topnav {
+			overflow: hidden;
+			background-color: #58257b;
+		}
+
+		.topnav a {
+			float: left;
+			display: block;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		.topnav a:hover {
+			background-color: #db7093;
+			color: white;
+			font-weight: bold
+		}
+
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		.dieukhien {
+			
+			float:left;
+			
+			width: 30.33%;
+		}
+		.apsuat {
+			
+			width: 30.33%;
+			float: left;
+			margin-right: 5%;
+		}
+		.dieukienhethong {
+			
+			width: 30.33%;
+			float: left;
+		}
+
+		@media (max-width:800px) {
+			h2{
+				font-size: 20px;
+			}
+			.as {
+				font-size: 15px;
+			}
+			/*ul {
+				width: 100%;
+			}*/
+			.apsuat {
+				float: left;
+			}
+			input[type=text] {
+				
+  				margin: 3px 0;
+  				display: inline-block;
+ 				border: 1px solid #ccc;
+  				box-sizing: border-box;
+  				width: 100%;
+
+			}
+			.ass{
+			    width: 100%;
+   				 float: left;
+   				 margin-left: -16%;
+   				margin-top: 9%;
+   			}
+   			.nhap {
+   				margin-left: 20%;
+   			}
+   			.dk {
+   				    margin-left: -16%;
+   			}
+   			.ht{
+   				    margin-left: -20%;
+   				}
+   			.dkht
+   			{
+   				float: left; margin-right: 4%;
+   			}
+   			.dkht1 {
+   				float: left; margin-right: 3%;
+   			}
+
+		}
+
+		.tiende {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="tiende">
+		<header> <IMG  style="float:bottom; width: 100%;" HSPACE="0" VSPACE="0" BORDER="0"  src="anh122.jpg"  width="1490" height="200" >
+		</header>
+	</div>
+	<div class="container ">
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="menu">
+					<ul>
+						<li><a href="index.html">Trang chủ</a></li>
+						<li><a href="Giam sat.html">Giám Sát</a></li>
+						<li><a href="nhom thuc hien.html">Nhóm Thực Hiện</a></li>
+					</ul> 
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 dieukhien">
+				<h2>1/Điều Khiển Auto & Man</h2>
+				<ul class="dk">
+					<td width="144px" height="21px">
+						<form method="post" action="">
+							<div class="auto" style="float:left; margin-right: 30px;">
+								<input type="submit" value="AUTO">
+								<input type="hidden" name='"AUTO"' size="20px" value="1">
+							</div>
+							<input type="hidden" name='"AUTO"' size="20px" value="0">
+							
+						</form>
+					</td>
+					<td width="144px" height="21px">
+						<form method="post" action="">
+							<input type="submit" value="MANUAL">
+							<input type="hidden" name='"MAN"' size="20px" value="1">
+							<input type="hidden" name='"MAN"' size="20px" value="0">
+						</form>
+					</td>
+
+
+					<table border="1">
+						<tr>
+							<th colspan="3">Giám Sát Hai Chế Độ</th>
+						</tr>
+						<tr>
+							<td>AUTO</td>
+							<td><img src="luzz:="DEN AUTO":.png" width="50" height="50" name="luzz" "DEN = 0" id= "DEN" alt="luzz"></td>
+
+						</tr>
+						<tr>
+							<td>MANUAL </td>
+							<td><img src="luzz:="DEN MAN":.png" width="50" height="50" name="luzz" "DEN = 1" id= "DEN" alt="luzz"></td>
+						</tr>
+					</table>
+				</ul>
+			</div>
+			<div class="col-sm-4 apsuat">
+
+				<h2 class="nhap" style="margin-left: 65px; ">2/ Nhập Áp Suất</h2>
+				<ol type =1>
+					<form method="post">		  
+						<ul class="ass">
+							<li><input name ='"AP SUAT DAT"' type ="text"><input type="submit" value="Xác Nhận"></li>
+							<p class="as">Áp Suất  Đặt : :="áp suất đặt": (bar)</p>
+						</ul>
+					</form>
+				</ol>
+			</div>
+			<div class="col-sm-4 dieukienhethong">
+
+				<h2>3/Điều Khiển Hệ Thống</h2>
+				<ul class="ht">
+					<td width="144px" height="21px">
+						<form method="post" action="">
+							<div class="dkht" style="float: left; margin-right: 1.5%;">
+							<input type="submit" value="START">
+							<input type="hidden" name='"M_START"' size="20px" value="1">
+							<input type="hidden" name='"M_START"' size="20px" value="0">
+							</div>
+
+
+						</form>
+					</td>
+					<td width="144px" height="21px">
+						<form method="post" action="">
+							<div class="dkht1" style="float: left; margin-right: 1.5%;"> 
+							<input type="submit" value="STOP">
+							<input type="hidden" name='"M_STOP"' size="20px" value="1">
+							<input type="hidden" name='"M_STOP"' size="20px" value="0">
+							</div>
+						</form>
+					</td>
+					<td width="144px" height="21px">
+						<form method="post" action="">			
+							<input type="submit" value="RESET">
+							<input type="hidden" name='"M_START"' size="20px" value="0">
+							<input type="hidden" name='"M_STOP"' size="20px" value="0">
+							<input type="hidden" name='"MAN"' size="20px" value="0">
+							<input type="hidden" name='"AUTO"' size="20px" value="0">
+
+						</form>
+					</td>
+
+					<table border="1">
+						<tr>
+							<th colspan="3">Giám Sát hoạt động</th>
+						</tr>
+						<tr>
+							<td>Đèn Làm Việc </td>
+							<td><img src="luzz:="denbaostart":.png" width="50" height="50" name="luzz" "DEN = 0" id= "DEN" alt="luzz"></td>
+
+						</tr>
+						<tr>
+							<td>Đèn Dừng Hệ Thống </td>
+							<td><img src="luz:="denbaostop":.png" width="50" height="50" name="luz" "DEN = 1" id= "DEN" alt="luz"></td>
+						</table>
+					</ul>				
+				</div>
+			</div>
+		</div>
+		<br><br><br><br><br><br><br>
+		
+		<footer>
+			<p>DESIGN BY: Anh Nguyen</p>
+			<p>SDT: 0377429354</p>
+			<p>WEBSITE: Anh Nguyen.Com.Vn</p>
+		</footer>	 
+	</body>
+	</html>
